@@ -1,0 +1,58 @@
+<div class="container">
+  <h2>Formulario de Ingreso de Estudiantes</h2>
+  <form [formGroup]="miFormulario" (ngSubmit)="onSubmit()">
+    <table class="table table-bordered">
+      <tr>
+        <td>Nombre</td>
+        <td>
+          <input type="text" class="form-control" formControlName="nombre">
+        </td>
+        <td>
+          <div *ngIf="f.nombre?.errors && (f.nombre?.dirty || f.nombre?.touched)" class="alert alert-danger">
+            <div *ngIf="f.nombre?.errors?.['required']">El nombre es obligatorio.</div>
+            <div *ngIf="f.nombre?.errors?.['minlength']">El nombre debe tener al menos 3 caracteres.</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>
+          <input type="email" class="form-control" formControlName="email">
+        </td>
+        <td>
+          <div *ngIf="f.email?.errors && (f.email?.dirty || f.email?.touched)" class="alert alert-danger">
+            <div *ngIf="f.email?.errors?.['required']">El email es obligatorio.</div>
+            <div *ngIf="f.email?.errors?.['email']">El email no es válido.</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Curso</td>
+        <td>
+          <select class="form-control" formControlName="curso">
+            <option value="">Seleccione un curso</option>
+            <option *ngFor="let curso of cursos" [value]="curso">{{curso}}</option>
+          </select>
+        </td>
+        <td>
+          <div *ngIf="f.curso?.errors && (f.curso?.dirty || f.curso?.touched)" class="alert alert-danger">
+            <div *ngIf="f.curso?.errors?.['required']">Debe seleccionar un curso.</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Edad</td>
+        <td>
+          <input type="number" class="form-control" formControlName="edad">
+        </td>
+        <td>
+          <div *ngIf="f.edad?.errors && (f.edad.dirty || f.edad.touched)" class="alert alert-danger">
+            <div *ngIf="f.edad?.errors?.['required']">La edad es obligatoria.</div>
+            <div *ngIf="f.edad?.errors?.['min']">Debe ser mayor de 18 años.</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <button type="submit" class="btn btn-success" [disabled]="miFormulario.invalid">Enviar</button>
+  </form>
+</div>

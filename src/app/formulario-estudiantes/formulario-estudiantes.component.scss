@@ -1,0 +1,50 @@
+/* Mejoras generales en el contenedor */
+.container {
+  margin-top: 20px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de la tabla con bordes redondeados y color de fondo */
+.table {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Campos de formulario con bordes y foco estilizados */
+.form-control {
+  border: 2px solid #007bff;
+  border-radius: 5px;
+}
+
+.form-control:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Estilo de los mensajes de error para que sean más notorios */
+.alert-danger {
+  margin-top: 10px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* Botón de envío con estilo más llamativo */
+.btn-success {
+  margin-top: 20px;  
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  border-color: #1e7e34;
+}
+
+/* Añadir margen entre filas de la tabla para mejor separación */
+tr {
+  margin-top: 15px;
+}
